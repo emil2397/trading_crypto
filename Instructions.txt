@@ -1,0 +1,11 @@
+user = "trading.view.alerts777@gmail.com"
+pwd = "kaif666aA"
+Это логин и пароль для авторизации в ngrok, trading view и google sheets
+
+1. Устанавливаем Ngrok.exe https://dashboard.ngrok.com/get-started/setup
+2. Запускаем Ngrok.exe, в командной строке вбиваем ngrok config add-authtoken 3XdC1NSkQug7veFTZDdKT_34NqWwWngcNsvk4qv6Azp
+3. Далее вбиваем - ngrok http 80
+4. В командной строке появится строка Forwarding - берем из нее http адрес
+5. Переход на сайт trading view, в alert - они обозначены иконкой в виде будльника и назвается "оповещения"
+нажимаем на шестеренку - редактировать и добавляем адрес из ngrok в строку url Web hook
+6. Далее запускаем код и открыаем google sheets 
