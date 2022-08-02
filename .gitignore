@@ -1,5 +1,12 @@
+# file extensions
 .png
 .xlsx
 .csv
 .xls
 .pdf
+
+# MacOS specific
+.DS_Store
+
+# Jupyter specific
+.ipynb_checkpoints
