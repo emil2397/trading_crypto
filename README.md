@@ -3,6 +3,11 @@
 ## ngrok usage
 ```ngrok http --region=us --hostname=trad.ngrok.io 80```
 
+## creds
+https://docs.google.com/spreadsheets/d/1Qi0GCCCTr2NBMbw9poXRsdWbywQGGosXOiqoDDn_i0w/edit#gid=0
+user = "trading.view.alerts777@gmail.com"
+pwd = "syvxuc-vivxYq-2kuhfa"
+
 ## old instructions
 ```
 user = "trading.view.alerts777@gmail.com"
