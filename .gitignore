@@ -5,6 +5,10 @@
 .xls
 .pdf
 
+# Python specific
+__pychache__/
+*.py[cod]
+
 # MacOS specific
 .DS_Store
 
