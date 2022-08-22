@@ -1,4 +1,4 @@
-# file extensions
+# File extensions
 .png
 .xlsx
 .csv
@@ -14,3 +14,6 @@ __pychache__/
 
 # Jupyter specific
 .ipynb_checkpoints
+
+# Project specific
+dashboard.json

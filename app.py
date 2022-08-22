@@ -11,8 +11,9 @@ warnings.filterwarnings("ignore")
 
 
 GOOGLE_KEY_PATH = "./local_data/google_key.json"
+SAVED_STATE_PATH = "./local_data/dashboard.json"
 
-dashboard = Dashboard(google_key_path=GOOGLE_KEY_PATH)
+dashboard = Dashboard(google_key_path=GOOGLE_KEY_PATH, saved_state_path=SAVED_STATE_PATH)
 app = Flask(__name__)
 
 
