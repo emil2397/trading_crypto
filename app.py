@@ -23,7 +23,7 @@ def hello():
     alert_time = datetime.datetime.now()
 
     data = request.get_data(cache=True, as_text=True, parse_form_data=True)
-    request_data = data.split(",")[1:4]
+    request_data = data.split(",")[1,2,4]
     request_data = [request_data]
 
     print("New alert: ", request_data)
