@@ -23,16 +23,17 @@ def hello():
     """Runs full pipeline."""
     alert_time = datetime.datetime.now()
 
-    data = request.get_data(cache=True, as_text=True, parse_form_data=True)
-    request_data = dict(zip(format, data.split(",")))
-    request_data = [[request_data["ticker"], request_data["timeframe"], request_data["patter"]]]
+    data = request.get_data(cache=True, as_text=True, parse_form_data=True).split(",")
+    alert_format = ALERT_FORMAT[:len(data)]
+    request_data = dict(zip(alert_format, data))
+    request_data = [[request_data["ticker"], request_data["timeframe"], request_data["pattern"]]]
 
     print("New alert: ", request_data)
 
     dashboard.update_data(request_data)
     dashboard.update_google_sheets(alert_time)
 
-    return data
+    return "Done."
 
 
 if __name__ == "__main__":
