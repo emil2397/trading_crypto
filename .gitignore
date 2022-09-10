@@ -4,6 +4,7 @@
 .csv
 .xls
 .pdf
+*.swp
 
 # Python specific
 __pychache__/

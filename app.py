@@ -12,14 +12,21 @@ warnings.filterwarnings("ignore")
 
 GOOGLE_KEY_PATH = "./local_data/google_key.json"
 SAVED_STATE_PATH = "./local_data/dashboard.json"
+PRIMARY_SHEET_ID = 0
+SECONDARY_SHEET_ID = 1
+GOOGLE_SHEET_NAME = "trade_dashb_ngrok"
 ALERT_FORMAT = ["alert", "ticker", "timeframe", "pattern", "time"]
 
-dashboard = Dashboard(google_key_path=GOOGLE_KEY_PATH, saved_state_path=SAVED_STATE_PATH)
+dashboard = Dashboard(google_key_path=GOOGLE_KEY_PATH,
+                      saved_state_path=SAVED_STATE_PATH,
+                      google_sheet_name=GOOGLE_SHEET_NAME,
+                      primary_sheet_id=PRIMARY_SHEET_ID,
+                      secondary_sheet_id=SECONDARY_SHEET_ID)
 app = Flask(__name__)
 
 
 @app.route("/", methods=["POST"])
-def hello():
+def get_alert():
     """Runs full pipeline."""
     alert_time = datetime.datetime.now()
 
@@ -28,10 +35,10 @@ def hello():
     request_data = dict(zip(alert_format, data))
     request_data = [[request_data["ticker"], request_data["timeframe"], request_data["pattern"]]]
 
-    print("New alert: ", request_data)
+    print(f"New alert: {request_data}.")
 
     dashboard.update_data(request_data)
-    dashboard.update_google_sheets(alert_time)
+    dashboard.update_google_sheets()
 
     return "Done."
 
